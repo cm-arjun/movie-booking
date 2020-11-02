@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { useHistory } from 'react-router-dom'
 
 export default function AddMovie(){
     const [formValues, setFormValues] = useState({});
+    const history = useHistory();
 
     const handleMovieTitleChange = (e) => {
         let name = e.target.value;
@@ -44,6 +46,8 @@ export default function AddMovie(){
             },
             body: JSON.stringify(data)
           });
+
+          alert("Movie Inserted!");
     }
 
     return (
@@ -67,6 +71,10 @@ export default function AddMovie(){
                 <Input type="email" onChange={handleMovieYearChange} name="email" id="exampleEmail" placeholder="Enter movie year here..." />
             </FormGroup>
             <Button color="success" onClick={addMovie}>Submit</Button>
+            &nbsp;
+            <Button onClick={()=> history.goBack()} color="info">
+                Back to Search Page
+            </Button>
         </Form>
     </div>
     );

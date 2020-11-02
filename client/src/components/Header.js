@@ -20,16 +20,15 @@ const Header = (props) => {
     <div>
       <Navbar color="light" light expand="md">
         <Link to="/" className="navbar-brand">
-          Book My Show
+          Book A Show
         </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="/components/">Author : C M Arjun</NavLink>
             </NavItem>
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
         </Collapse>
       </Navbar>
     </div>
